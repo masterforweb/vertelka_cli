@@ -1,7 +1,10 @@
 <?php
 
   	// загрузка рекламных мест
-    function vrt_load($domain){
+    function vrt_load($domain = ''){
+
+      if ($domain == '')
+        $domain = $_SERVER['SERVER_NAME'];
       
       $url = 'http://vertelka.argumenti.ru/all/'.$domain;
       $ch = curl_init($url);
